@@ -88,7 +88,7 @@ class start_page extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => home_page()));
                     },
                     style: ElevatedButton.styleFrom(
-                        primary: const Color.fromARGB(255, 228, 140, 33)),
+                        backgroundColor: const Color.fromARGB(255, 228, 140, 33)),
                   )),
             ],
           ),
@@ -377,9 +377,11 @@ class _home_pageState extends State<home_page> {
 
   void _addToDoItem(String toDo) {
     setState(() {
-      todosList.add(ToDo(
-          id: DateTime.now().millisecondsSinceEpoch.toString(),
-          todoText: toDo));
+      todosList.add(
+        ToDo(
+            id: DateTime.now().millisecondsSinceEpoch.toString(),
+            todoText: toDo),
+      );
     });
     _todoController.clear();
   }
